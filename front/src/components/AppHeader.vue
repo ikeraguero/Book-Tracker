@@ -3,10 +3,10 @@
             <router-link to="/" class="logo"> Book Tracker
             </router-link>
         <ul class="links">
-            <li><router-link to="/">Add Book</router-link></li>
-            <li><router-link to="/">Add Category</router-link></li>
-            <li><router-link to="/">Books</router-link></li>
-            <li><router-link to="/">Profile</router-link></li>
+            <li><router-link to="/addbook">Add Book</router-link></li>
+            <li><router-link to="/addcategory">Add Category</router-link></li>
+            <li><router-link to="/books">Books</router-link></li>
+            <li><router-link to="/profile">Profile</router-link></li>
         </ul>
     </nav>
 </template>
