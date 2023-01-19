@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <div class="user">
-          Logged as {{ user.name }}
+          Logged as 
       </div>
     <div class="currently">
       Currently Reading:
@@ -19,36 +19,6 @@
 </template>
 
 <script>
-  import axios from "axios"
-  import router from "../router"
-
-  export default {
-    name: "Login",
-    data() {
-      return {
-        user: {
-          name: "Jesse"
-        }
-      }
-    },
-    methods: {
-      getUserData: function() {
-        let self = this
-        axios.get("api/user")
-        .then((response) => {
-          console.log(response)
-          self.$set(this, "user", response.data.user)
-        })
-        .catch((errors) => {
-          console.log(errors)
-          router.push("/")
-        })
-      }
-    },
-    mounted() {
-      this.getUserData()
-    }
-  }
 </script>
 
 <style>
