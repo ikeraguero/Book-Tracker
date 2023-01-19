@@ -1,17 +1,17 @@
 <template>
-  <AppHeader />
+  <AppHeader v-if="$route.path!=='/'"/>
   <router-view/>
   <AppFooter />
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import AppHeader from '@/components/AppHeader.vue'
 
 export default {
   components: {
-    AppHeader,
-    AppFooter
+    AppFooter,
+    AppHeader
   }
 }
 </script>
