@@ -36,6 +36,7 @@ nav {
   align-items: center;
   width: 100%;
   margin: auto;
+  height: 55px;
 }
 
 .links {

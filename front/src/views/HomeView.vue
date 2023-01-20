@@ -5,12 +5,13 @@
       </div>
     <div class="currently">
       Currently Reading:
+      <BookCards />
     </div>
     <div class="list">
       My List:
     </div>
     <div class="finished">
-      Finished
+      Finished:
     </div>
     <div class="favorites">
       Favorites:
@@ -19,6 +20,13 @@
 </template>
 
 <script>
+import BookCards from '@/components/BookCards.vue'
+
+export default {
+  components: {
+    BookCards
+  }
+}
 </script>
 
 <style>
@@ -28,12 +36,13 @@
   padding: 20px;
 }
 
-.list, .finished, .favorites {
+.finished, .favorites {
   margin-top: 300px;
 }
 
 .user {
   margin-bottom: 10px;
 }
+
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <AppHeader v-if="$route.path!=='/'"/>
+  <AppHeader />
   <router-view/>
   <AppFooter />
 </template>
@@ -27,6 +27,7 @@ export default {
 }
 body{
   margin: 0%;
+  background-image: linear-gradient(120deg, #ffffff, rgb(221, 248, 248));
 }
 
 </style>
