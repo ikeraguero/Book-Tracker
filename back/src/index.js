@@ -1,11 +1,19 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan')
 const app = express();
+
+
 const PORT = 3001;
 const bookRoute = require('../routes/books.js')
 const userRoute = require('../routes/users.js')
 
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(morgan('combine'));
+app.use(cors())
+app.use(bodyParser.json())
 app.use(bookRoute);
 app.use(userRoute);
 

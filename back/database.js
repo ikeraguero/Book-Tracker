@@ -10,10 +10,6 @@ const pool = createPool ({
     connectionLimit: 10
 })
 
-console.log(process.env.MYSQL_DATABASE);
-console.log(process.env.MYSQL_PASSWORD);
-console.log(process.env.MYSQL_DATABASE);
-
 pool.query(`select * from books`, (err, res, fields)=>{
     if (err) {
         return console.log(err);
