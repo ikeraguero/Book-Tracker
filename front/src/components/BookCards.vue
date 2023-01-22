@@ -16,11 +16,11 @@
                     Author's Name
                 </p>
                 <div class="buttons flex justify-center mt-12">
-                    <button class="inline-block px-4 py-1 bg-white rounded mr-2">
-                        Remove
+                    <button class="inline-block px-4 py-1 bg-white rounded mr-2 w-24">
+                        Read
                     </button>
-                    <button class="inline-block px-4 py-1 bg-white rounded ml-2">
-                        Finished
+                    <button class="inline-block px-4 py-1 bg-white rounded ml-2 w-24">
+                        Favorite
                     </button>
                 </div>
             </div>

@@ -5,7 +5,7 @@ const PORT = 3001;
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.listen(PORT, () => console.log(`Running Express Server on PORT ${PORT}`))
+app.listen(PORT, () => console.log(`Running Express Server on http://localhost:${PORT}`))
 
 const bookList = [
     {
@@ -28,7 +28,17 @@ const bookList = [
 // GET
 
 app.get('/api/books', (req, res) => {
-    res.send(bookList);
+    res.send(bookList)
+})
+
+app.get('/api/books/:id', (req, res) => {
+    const { id } = req.params;                 // Attributing the parameter value to {{ id }}
+    const book = bookList.find((b) => b.id === id); // Goes through every single element in the list of books and then return the one that the ID equals the parameter
+    res.send(book);
+})
+
+app.get('/api/users', (req, res) => {
+    res.send('Users Page')
 })
 
 // POST
