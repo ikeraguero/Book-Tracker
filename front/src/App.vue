@@ -1,5 +1,5 @@
 <template>
-  <AppHeader />
+  <AppHeader v-if="$route.path!='/register'"/>
   <router-view/>
   <AppFooter />
 </template>
