@@ -9,7 +9,7 @@ app.use(express.urlencoded());
 app.use(bookRoute);
 app.use(userRoute);
 
-app.use('/api', bookRoute, userRoute) // route 'api' prefix for every route on books.js
+app.use('/api', bookRoute, userRoute) // 'api' route prefix for every route on books.js and users.js
 
 app.listen(PORT, () => console.log(`Running Express Server on http://localhost:${PORT}`))
 
