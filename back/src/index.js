@@ -1,50 +1,16 @@
 const express = require('express');
 const app = express();
 const PORT = 3001;
+const bookRoute = require('../routes/books.js')
+const userRoute = require('../routes/users.js')
 
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(bookRoute);
+app.use(userRoute);
+
+app.use('/api', bookRoute, userRoute) // route 'api' prefix for every route on books.js
 
 app.listen(PORT, () => console.log(`Running Express Server on http://localhost:${PORT}`))
 
-const bookList = [
-    {
-        id: "1",
-        name: "In Search of Lost Time",
-        author: "Marcel Proust"
-    },
-    {
-        id: "2",
-        name: "Don Quixote",
-        author: "Miguel de Cervantes"
-    },
-    {
-        id: "3",
-        name: "The Great Gatsby",
-        author: "F. Scott Fitzgerald"
-    },
-];
 
-// GET
-
-app.get('/api/books', (req, res) => {
-    res.send(bookList)
-})
-
-app.get('/api/books/:id', (req, res) => {
-    const { id } = req.params;                 // Attributing the parameter value to {{ id }}
-    const book = bookList.find((b) => b.id === id); // Goes through every single element in the list of books and then return the one that the ID equals the parameter
-    res.send(book);
-})
-
-app.get('/api/users', (req, res) => {
-    res.send('Users Page')
-})
-
-// POST
-
-app.post('/api/books', (req, res) => {
-    console.log(req.body);
-    bookList.push(req.body);
-    res.send(201);
-})
