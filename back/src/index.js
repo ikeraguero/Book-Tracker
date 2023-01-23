@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan')
 const app = express();
+const {sequelize} = require('./models')
 
 
 const PORT = 3001;
@@ -11,7 +12,7 @@ const userRoute = require('../routes/users.js')
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(morgan('combine'));
+app.use(morgan('combined'));
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bookRoute);
