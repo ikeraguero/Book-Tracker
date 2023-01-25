@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan')
 const app = express();
-const {sequelize} = require('./models')
+const {sequelize} = require('./models');
+const config = require('.config/config')
 
-
-const PORT = 3001;
 const bookRoute = require('../routes/books.js')
 const userRoute = require('../routes/users.js')
 
@@ -20,6 +19,10 @@ app.use(userRoute);
 
 app.use('/api', bookRoute, userRoute) // 'api' route prefix for every route on books.js and users.js
 
-app.listen(PORT, () => console.log(`Running Express Server on http://localhost:${PORT}`))
+
+sequelize.sync().then(() => {
+    app.listen(config.port, () => 
+    console.log(`Running Express Server on http://localhost:${config.port}`))
+})
 
 
